@@ -14,7 +14,7 @@ class User():
          cls("lucy","99Lu","TikTok"),
          cls("Kev","kev45","Spotify")
         ]
-        
+        return User.createDatalist()
         
     # for the 2 test case
     def save_user(self):

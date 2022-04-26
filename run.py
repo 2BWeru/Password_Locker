@@ -22,14 +22,17 @@ def main():
         input("Password : ")
         print('\n')
         
+        
     while True:
+      print('\n')
       print(f"{login} Select choice of action , by  using the numbers/ shortcode next to it:" )
+      print('\n')
       print("1 - create a new Account Details.")
       print("2 - display Account details.")
       print("3 - find an Account details.")
       print("ex - exit the current Account detail.")
       print("4 - delete user Account details.")
-
+      print('\n')
       short_code = input().lower()
 
       if short_code == '1':
@@ -52,14 +55,14 @@ def main():
 
       elif short_code == '2':
          details = display_user()
-         list_present = createDatalist()
+        #  list_present = createDatalist()
          if len(details) != 0 :
             print("Here is a list of all your Account details")
             print('\n')
 
             for index,user in enumerate(details):
                print(f"{index+1}. {user.user_name}, {user.appname},{user.pass_word}")
-               print(list_present)
+               print(f"{user.user_list}")
 
                print('\n')
          else:
@@ -74,7 +77,7 @@ def main():
                search_app_name = input()
                if find_user(search_app_name):
                    search_app_name = find_user(search_app_name)
-                   print(f"{search_app_name.app_name}")
+                   print(f"{search_app_name.appname}")
                    print('-' * 20)
 
                    print(f"Username.......{search_app_name.user_name}")
@@ -83,7 +86,7 @@ def main():
                    print("That Account detail does not exist")
       elif  short_code == "4":
                    print("Are you sure you want to delete this Account detail")
-                   print("Enter credential you want to delete")
+                   print("Enter the Account's app name you want to delete")
                    search_user_name = input()
                    if find_user(search_user_name):
                     search_user_name = find_user(search_user_name)
@@ -102,9 +105,10 @@ def main():
                  break
       else:
                      print("I really didn't get that. Please use the short code / numbers")
+                     print("unable to log in")
+
+               
    
-    else:
-        print("Unable to login") 
      
       
          
@@ -117,9 +121,7 @@ def create_user(user_name,pass_word,app_name):
     new_user = User(user_name,pass_word,app_name)
     return new_user
     # existing list
-def createDatalist():
 
-    return User
 # save user
 def save_user(user):
     '''
