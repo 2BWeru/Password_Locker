@@ -65,7 +65,7 @@ class TestUser(unittest.TestCase):
 
           found_user = User.find_by_name("Gmail")
                  
-          self.assertEqual(found_user.appname,test_user.appname)
+          self.assertEqual(found_user.appname,test_user.app_name)
         
 # check if a user object actually exists.
         def test_user_exists(self):

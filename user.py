@@ -8,13 +8,13 @@ class User():
        self.appname = appname
     
     @classmethod
-    def createDatalist(list):
-        list.user_list = [
-         list("Mitch2","23Mitch","Twitter"),
-         list("lucy","99Lu","TikTok"),
-         list("Kev","kev45","Spotify")
+    def createDatalist(cls):
+        cls.user_list = [
+         cls("Mitch2","23Mitch","Twitter"),
+         cls("lucy","99Lu","TikTok"),
+         cls("Kev","kev45","Spotify")
         ]
-    
+        
         
     # for the 2 test case
     def save_user(self):
