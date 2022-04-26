@@ -21,6 +21,22 @@ class User():
          if user.appname == string:
                 return user
 
+# check if user detail exists
+    @classmethod
+    def user_exist(cls,name):
+        
+          '''
+        Method that checks if a user details exists from the user list.
+        Args:
+            number: appname to search if it exists
+        Returns :
+            Boolean: True or false depending if the user detail exists
+        '''
+          for user in cls.user_list:
+                if user.appname == name:
+                    return True
+
+          return True
         
 
 

@@ -68,7 +68,20 @@ class TestUser(unittest.TestCase):
                  
           self.assertEqual(found_user.appname,test_user.appname)
         
-        
+# check if a user object actually exists.
+        def test_user_exists(self):
+            '''
+             test to check if we can return a Boolean  if we cannot find the contact.
+            '''
+
+            self.new_user.save_user()
+            test_user = User("Grace","Graceeru","Gmail") # new contact
+            test_user.save_user()
+
+            user_exists = User.user_exist("Grace")
+
+            self.assertTrue(user_exists)
+
 
 
 
