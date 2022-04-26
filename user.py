@@ -1,3 +1,4 @@
+import pyperclip
 class User():
     def __init__(self,user_name,pass_word,appname):
        self.user_name = user_name
@@ -11,6 +12,14 @@ class User():
              
              User.user_list.append(self)
         
+    def delete_user(self):
+
+        '''
+        delete_user method deletes a saved user detail from the user_list
+        '''
+
+        User.user_list.remove(self)
+
         # for  fourth test case
 # to find user detail@classmethod
     @classmethod
@@ -45,6 +54,10 @@ class User():
           '''
           return cls.user_list
         
+    # @classmethod
+    # def copy_username(cls,name):
+    #     user_found = User.find_by_name(name)
+    #     pyperclip.copy(user_found.user_name)
 
 
 

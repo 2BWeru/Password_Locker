@@ -1,6 +1,7 @@
-from typing import Any
+
 import unittest
 from user import User
+import pyperclip
 
 class TestUser(unittest.TestCase):
         '''
@@ -42,16 +43,16 @@ class TestUser(unittest.TestCase):
             self.assertEqual(len(User.user_list),2)
 
 # delete user details test
-#         def test_delete_user(self):
-#               '''
-#                test_delete_user to test if we can remove a contact from our contact list
-#               '''
-#               self.new_user.save_user()
-#               test_user = User("Grace","Graceeru","Gmail") # new contact
-#               test_user.save.user()
+        def test_delete_user(self):
+              '''
+               test_delete_user to test if we can remove a contact from our contact list
+              '''
+              self.new_user.save_user()
+              test_user = User("Grace","Graceeru","Gmail") # new contact
+              test_user.save_user()
 
-#               self.new_user.delete_user()# Deleting a contact object
-#               self.assertEqual(len(User.user_list),1)
+              self.new_user.delete_user()# Deleting a contact object
+              self.assertEqual(len(User.user_list),1)
      
     #  to find app name
 
@@ -90,7 +91,15 @@ class TestUser(unittest.TestCase):
 
              self.assertEqual(User.display_user(),User.user_list)
 
+        # def test_copy_username(self):
+        #       '''
+        #         Test to confirm that we are copying the user name from a found user
+        #      '''
 
+        #       self.new_user.save_user()
+        #       User.copy_username("Grace")
+
+        #       self.assertEqual(self.new_user.user_name,pyperclip.paste())
 
 
 
