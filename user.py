@@ -3,3 +3,4 @@ class User():
        self.user_name = user_name
        self.pass_word = pass_word
        self.app_name = app_name
+
