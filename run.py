@@ -5,22 +5,23 @@ from credentials import Credentials
 def main():
     print("Hello Welcome to your Password locker.")
     print(" What is your name?")
-    user_name = input()
+    login = input()
+    
 
-    print(f"Hello {user_name}. what would you like to do?")
+    print(f"Hello {login}. what would you like to do?")
     print('\n')
 
     while True:
-      print("Use these short codes : ud - create a new UserDetails, dc - display user details, fc -find a user details, ex -exit the user details list ")
+      print("Use these short codes : 1 - create a new UserDetails, 2 - display user details, 3-find a user details, ex - exit the user details list , 4 - delete user details")
 
       short_code = input().lower()
 
-      if short_code == 'ud':
+      if short_code == '1':
          print("New User Details")
          print("-"*10)
 
          print ("User name ....")
-         user_names = input()
+         user_name = input()
 
          print("Password ...")
          pass_word = input()
@@ -30,17 +31,17 @@ def main():
 
          save_user(create_user(user_name ,pass_word, app_name)) # create and save new contact.
          print ('\n')
-         print(f"New User details {user_names} ,{pass_word} ,{app_name} created")
+         print(f"New User details {user_name} ,{pass_word} ,{app_name} created")
          print ('\n')
 
-      elif short_code == 'dc':
-         
+      elif short_code == '2':
+         details = display_user()
          if display_user():
             print("Here is a list of all your User details")
             print('\n')
 
-            for user in display_user():
-               print("username" , "password", "appname")
+            for index,user in enumerate(details):
+               print(f"{index+1}, {user.user_name}, {user.appname},{user.pass_word}")
 
                print('\n')
          else:
@@ -48,7 +49,7 @@ def main():
                print("You dont seem to have any user details saved yet")
                print('\n')
 
-      elif short_code == 'fc':
+      elif short_code == '3':
 
                print("Enter the App name you want to search for")
 
@@ -58,10 +59,25 @@ def main():
                    print(f"{search_user.user_name} {search_user.pass_word}")
                    print('-' * 20)
 
-                   print(f"Username.......{search_user.username}")
+                   print(f"Username.......{search_user.user_name}")
                    print(f"Password.......{search_user.pass_word}")
                else:
                    print("That User detail does not exist")
+      elif  short_code == "4":
+                   print("Are you sure you want to delete this Account detail")
+                   print("Enter credential you want to delete")
+                   search_user_name = input()
+                   if find_user(search_user_name):
+                    search_user_name = find_user(search_user_name)
+                    print(f"{search_user_name.user_name} {search_user_name.pass_word}")
+                    print('-' * 20)
+                    search_user_name.delete_user()
+                    print("\n")
+                    print(f"Your  Account  is : {search_user_name.user_name} successfully deleted!")
+                    print('\n')
+                   else:
+                     print("User Account cannot be found")
+
 
       elif short_code == "ex":
                print("Bye .......")

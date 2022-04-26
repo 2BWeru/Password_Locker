@@ -1,52 +1,21 @@
 import pyperclip
 class User():
+    user_list = []
+
     def __init__(self,user_name,pass_word,appname):
        self.user_name = user_name
        self.pass_word = pass_word
        self.appname = appname
-
-    def setUp(self):
-        self.new_user = User("bettyweru" , "b345" , "Todolist") # create contact object
-
-    user_list = [
-         {
-        "username":"Mitch2",
-        "password":"23Mitch",
-        "appname":"Twitter"
-    },
-
-     {
-        "username":"Mitch678",
-        "password":"678Mitch",
-        "appname":"Chrome"
-    },
-
-     {
-        "username":"Mitch20",
-        "password":"2389M",
-        "appname":"Snapchat"
-    },
-     {
-        "username":"Mitch",
-        "password":"2388Mitch",
-        "appname":"Netflix"
-    },
-     {
-        "username":"Mitchell21",
-        "password":"44000",
-        "appname":"Spotify"
-    },
-     {
-        "username":"Mitch12",
-        "password":"12789",
-        "appname":"HackerRank"
-    },
-     {
-        "username":"Mitchell29",
-        "password":"29666",
-        "appname":"TikTok"
-    },
-    ]
+    
+    @classmethod
+    def createDatalist(list):
+        list.user_list = [
+         list("Mitch2","23Mitch","Twitter"),
+         list("lucy","99Lu","TikTok"),
+         list("Kev","kev45","Spotify")
+        ]
+    
+        
     # for the 2 test case
     def save_user(self):
 
