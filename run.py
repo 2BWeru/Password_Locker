@@ -11,7 +11,7 @@ def main():
     print('\n')
 
     while True:
-      print("Use these short codes : ud - create a new UserDetails, dc - display contacts, fc -find a contact, ex -exit the contact list ")
+      print("Use these short codes : ud - create a new UserDetails, dc - display user details, fc -find a user details, ex -exit the user details list ")
 
       short_code = input().lower()
 
@@ -70,11 +70,11 @@ def main():
                print("I really didn't get that. Please use the short codes")
 # end of main
 # Create a new user
-def create_user(self,user_name,pass_word,app_name):
+def create_user(user_name,pass_word,app_name):
     '''
     Function to create a new user
     '''
-    new_user = User(self,user_name,pass_word,app_name)
+    new_user = User(user_name,pass_word,app_name)
     return new_user
 
 # save user
